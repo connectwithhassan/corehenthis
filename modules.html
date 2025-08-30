@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coherent HIS — Modules</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased text-slate-900">
+
+  <!-- header (same) -->
+  <header class="fixed w-full z-50">
+    <div class="backdrop-blur bg-white/80 border-b border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="main.html" class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Coherent HIS" class="h-8 md:h-10 w-auto" />
+          <span class="font-semibold">Coherent HIS</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="text-sm font-medium hover:text-slate-600">About</a>
+          <a href="modules.html" class="text-sm font-medium hover:text-slate-600">Modules</a>
+          <a href="features.html" class="text-sm font-medium hover:text-slate-600">Features</a>
+          <a href="compliance.html" class="text-sm font-medium hover:text-slate-600">Compliance</a>
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold hover:bg-slate-50">Book a demo →</a>
+        </nav>
+        <button id="mobileToggle" class="md:hidden p-2 rounded-lg border">☰</button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t p-4 mobile-menu">
+        <div class="flex flex-col gap-2">
+          <a href="about.html" class="py-2">About</a>
+          <a href="modules.html" class="py-2">Modules</a>
+          <a href="features.html" class="py-2">Features</a>
+          <a href="compliance.html" class="py-2">Compliance</a>
+          <a href="contact.html" class="py-2 inline-flex items-center gap-2 rounded-full border px-4 py-2 w-max">Book a demo →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <section class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold mb-6">Core Modules</h1>
+        <p class="text-slate-700 mb-8">Each module is built to plug into a larger ecosystem—pick what you need.</p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">Electronic Medical Record (EMR)</h3>
+            <p class="mt-2 text-slate-700">SOAP templates, order entry, problem lists and customizable templates for your specialty.</p>
+          </article>
+
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">e-Prescriptions</h3>
+            <p class="mt-2 text-slate-700">Formulary checks, interactions, and ePCS-ready workflows.</p>
+          </article>
+
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">Scheduling</h3>
+            <p class="mt-2 text-slate-700">Provider calendars, patient self-booking, reminders and waitlists.</p>
+          </article>
+
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">RCM & Billing</h3>
+            <p class="mt-2 text-slate-700">Claim scrubbing, ERA/EOB posting, denials workflow and analytics.</p>
+          </article>
+
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">Security & Compliance</h3>
+            <p class="mt-2 text-slate-700">RBAC, SSO, audit logging and encryption for PHI protection.</p>
+          </article>
+
+          <article class="rounded-2xl p-6 border bg-white reveal">
+            <h3 class="text-xl font-semibold">Cloud & Operations</h3>
+            <p class="mt-2 text-slate-700">Scalable hosting, backups and disaster recovery built for uptime.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="border-t py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <img src="images/logo-coherenthis.svg" alt="Coherent HIS" class="h-8" />
+          <p class="mt-3 text-slate-700 max-w-sm">Coherent HIS is a modern, modular healthcare information system built for speed, safety, and interoperability.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Product</div>
+            <a href="modules.html" class="hover:text-slate-600">Modules</a>
+            <a href="features.html" class="hover:text-slate-600">Features</a>
+            <a href="compliance.html" class="hover:text-slate-600">Compliance</a>
+          </nav>
+
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Company</div>
+            <a href="about.html" class="hover:text-slate-600">About</a>
+            <a href="contact.html" class="hover:text-slate-600">Contact</a>
+            <a href="#" class="hover:text-slate-600">Status</a>
+          </nav>
+        </div>
+
+        <div class="text-sm text-slate-600">
+          © <span id="year"></span> Coherent HIS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

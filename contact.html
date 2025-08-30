@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coherent HIS — Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased text-slate-900">
+  <!-- header -->
+  <header class="fixed w-full z-50">
+    <div class="backdrop-blur bg-white/80 border-b border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="main.html" class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Coherent HIS" class="h-8 md:h-10 w-auto" />
+          <span class="font-semibold">Coherent HIS</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="text-sm font-medium hover:text-slate-600">About</a>
+          <a href="modules.html" class="text-sm font-medium hover:text-slate-600">Modules</a>
+          <a href="features.html" class="text-sm font-medium hover:text-slate-600">Features</a>
+          <a href="compliance.html" class="text-sm font-medium hover:text-slate-600">Compliance</a>
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold hover:bg-slate-50">Book a demo →</a>
+        </nav>
+        <button id="mobileToggle" class="md:hidden p-2 rounded-lg border">☰</button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t p-4 mobile-menu">
+        <div class="flex flex-col gap-2">
+          <a href="about.html" class="py-2">About</a>
+          <a href="modules.html" class="py-2">Modules</a>
+          <a href="features.html" class="py-2">Features</a>
+          <a href="compliance.html" class="py-2">Compliance</a>
+          <a href="contact.html" class="py-2 inline-flex items-center gap-2 rounded-full border px-4 py-2 w-max">Book a demo →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <section class="py-20 max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-6 text-center">Request a Demo</h1>
+      <p class="text-center text-slate-700 mb-8">Tell us a little about your facility and we'll schedule a tailored walkthrough.</p>
+
+      <form id="contactForm" class="grid gap-4 bg-white p-8 rounded-2xl border shadow">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input required name="name" class="rounded-xl border px-4 py-2" placeholder="Full name" />
+          <input required name="email" type="email" class="rounded-xl border px-4 py-2" placeholder="Work email" />
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input name="org" class="rounded-xl border px-4 py-2" placeholder="Organization" />
+          <input name="role" class="rounded-xl border px-4 py-2" placeholder="Role" />
+        </div>
+
+        <textarea name="message" class="rounded-xl border px-4 py-2 min-h-[140px]" placeholder="What problems are you trying to solve?"></textarea>
+
+        <div class="flex items-center justify-between">
+          <button id="submitBtn" type="submit" class="px-6 py-3 bg-black text-white rounded-2xl">Request demo →</button>
+          <div class="text-sm text-slate-500">By submitting, you agree to our Terms & Privacy.</div>
+        </div>
+
+        <div id="formMsg" class="text-sm mt-2"></div>
+      </form>
+    </section>
+
+    <footer class="border-t py-10 mt-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <img src="images/logo-coherenthis.svg" alt="Coherent HIS" class="h-8" />
+          <p class="mt-3 text-slate-700 max-w-sm">Coherent HIS is a modern, modular healthcare information system built for speed, safety, and interoperability.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Product</div>
+            <a href="modules.html" class="hover:text-slate-600">Modules</a>
+            <a href="features.html" class="hover:text-slate-600">Features</a>
+            <a href="compliance.html" class="hover:text-slate-600">Compliance</a>
+          </nav>
+
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Company</div>
+            <a href="about.html" class="hover:text-slate-600">About</a>
+            <a href="contact.html" class="hover:text-slate-600">Contact</a>
+            <a href="#" class="hover:text-slate-600">Status</a>
+          </nav>
+        </div>
+
+        <div class="text-sm text-slate-600">
+          © <span id="year"></span> Coherent HIS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // basic client-only submit mock (replace with Formspree/AJAX backend)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    form && form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      setTimeout(() => {
+        btn.disabled = false; btn.textContent = 'Request demo →';
+        msg.textContent = 'Thanks! We received your request — we will contact you shortly.';
+        form.reset();
+      }, 900);
+    });
+  </script>
+</body>
+</html>

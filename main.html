@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coherent HIS — Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased text-slate-900">
+
+  <!-- Header -->
+  <header class="fixed w-full z-50">
+    <div class="backdrop-blur bg-white/80 border-b border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="main.html" class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Coherent HIS" class="h-8 md:h-10 w-auto" />
+          <span class="font-semibold">Coherent HIS</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="text-sm font-medium hover:text-slate-600">About</a>
+          <a href="modules.html" class="text-sm font-medium hover:text-slate-600">Modules</a>
+          <a href="features.html" class="text-sm font-medium hover:text-slate-600">Features</a>
+          <a href="compliance.html" class="text-sm font-medium hover:text-slate-600">Compliance</a>
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold hover:bg-slate-50">Book
+            a demo →</a>
+        </nav>
+
+        <button id="mobileToggle" class="md:hidden p-2 rounded-lg border">☰</button>
+      </div>
+
+      <div id="mobileMenu" class="md:hidden hidden border-t p-4 mobile-menu">
+        <div class="flex flex-col gap-2">
+          <a href="about.html" class="py-2">About</a>
+          <a href="modules.html" class="py-2">Modules</a>
+          <a href="features.html" class="py-2">Features</a>
+          <a href="compliance.html" class="py-2">Compliance</a>
+          <a href="contact.html" class="py-2 inline-flex items-center gap-2 rounded-full border px-4 py-2 w-max">Book a
+            demo →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <!-- HERO -->
+    <section class="hero relative h-[86vh] sm:h-[92vh] overflow-hidden">
+      <canvas id="hero-canvas" class="absolute  inset-0 z-0"></canvas>
+      <div class="hero_effect absolute inset-0 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-white/80 via-white/10 to-transparent z-5"></div>
+      <div class="relative z-20 h-full flex items-center">
+        <div class="max-w-7xl my-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div class="max-w-3xl">
+            <h1 style="font-family: Orlean, Sans-serif" class="text-3xl sm:text-5xl md:text-6xl "><b>Coherent –</b> Your
+              Complete Health Information
+              Solution</h1>
+            <p class="mt-4 text-slate-700 text-base sm:text-lg">Transform patient care, safeguard compliance, and
+              optimise revenue with our all‑in‑one EMR and practice management platform—designed for modern clinics and
+              hospitals in the Middle East and the USA</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="modules.html"
+                class="inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 bg-black text-white font-semibold shadow">Explore
+                modules →</a>
+              <a href="contact.html"
+                class="inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 border font-semibold">Get a quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights & Sticky preview -->
+    <section aria-label="Highlights" class="relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-start">
+        <div class="hidden lg:block sticky-panel">
+          <div class="w-full h-96 bg-gray-300 rounded-2xl shadow-2xl border"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Grid summary -->
+    <section class="py-16 md:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-4xl font-bold">Core Modules</h2>
+        <p class="mt-3 text-slate-700 max-w-2xl mx-auto">Pick what you need, add as you grow. Each module integrates
+          seamlessly with the rest of the platform.</p>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>📄</div>
+              <h3 class="text-lg font-semibold">EMR</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>SOAP notes & templates</li>
+              <li>Order sets & CPOE</li>
+              <li>ICD-10 / LOINC pickers</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>💊</div>
+              <h3 class="text-lg font-semibold">e-Prescriptions</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>Drug interactions & allergies</li>
+              <li>Formulary checks</li>
+              <li>EPCS-ready</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>📱</div>
+              <h3 class="text-lg font-semibold">Scheduling</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>Provider calendars</li>
+              <li>Self-service bookings</li>
+              <li>Waitlists & reminders</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>💳</div>
+              <h3 class="text-lg font-semibold">RCM & Billing</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>Claim scrubbing</li>
+              <li>ERA/EOB posting</li>
+              <li>Denials worklists</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>🔒</div>
+              <h3 class="text-lg font-semibold">Security</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>RBAC & SSO</li>
+              <li>Audit trails</li>
+              <li>PHI encryption</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white border p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <div>☁️</div>
+              <h3 class="text-lg font-semibold">Cloud</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-slate-700">
+              <li>Scalable & redundant</li>
+              <li>Backups & DR</li>
+              <li>High availability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screens Carousel -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h3 class="text-2xl sm:text-4xl font-bold">See it in action</h3>
+          <p class="mt-3 text-slate-700">A quick look at common workflows across modules.</p>
+        </div>
+
+        <div class="mt-10 overflow-x-auto no-scrollbar">
+          <div class="flex gap-6 w-max px-4 pb-6">
+            <div class="h-[360px] w-64 bg-gray-300 rounded-2xl border shadow"></div>
+            <div class="h-[360px] w-64 bg-gray-300 rounded-2xl border shadow"></div>
+            <div class="h-[360px] w-64 bg-gray-300 rounded-2xl border shadow"></div>
+            <div class="h-[360px] w-64 bg-gray-300 rounded-2xl border shadow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
+        <blockquote class="rounded-2xl border p-8 bg-white shadow-sm reveal">
+          <p class="text-lg">“Switching to Coherent HIS cut our charting time by half and improved claims acceptance
+            immediately.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-gray-300 border"></div>
+            <div>
+              <div class="font-semibold">Dr. Sarah Ahmed</div>
+              <div class="text-sm text-slate-600">Chief Medical Officer, CityCare</div>
+            </div>
+          </div>
+        </blockquote>
+
+        <blockquote class="rounded-2xl border p-8 bg-white shadow-sm reveal">
+          <p class="text-lg">“Scheduling and e-prescriptions just work. Our staff could adopt it with almost no
+            training.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-gray-300 border"></div>
+            <div>
+              <div class="font-semibold">Imran Khan</div>
+              <div class="text-sm text-slate-600">Clinic Manager, Downtown Medical</div>
+            </div>
+          </div>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl border p-10 bg-gradient-to-tr from-slate-50 to-white">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl sm:text-4xl font-bold">Ready to see a live demo?</h3>
+              <p class="mt-3 text-slate-700 max-w-prose">Tell us about your facility and we’ll tailor a walkthrough for
+                your clinical and admin teams.</p>
+              <ul class="mt-4 space-y-2 text-slate-700">
+                <li>30-minute product tour</li>
+                <li>Sandbox access after the call</li>
+                <li>Pricing & rollout plan</li>
+              </ul>
+            </div>
+
+            <div>
+              <form class="grid gap-3" action="contact.html" method="get">
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <input required name="name" class="rounded-xl border px-4 py-2" placeholder="Full name" />
+                  <input required type="email" name="email" class="rounded-xl border px-4 py-2"
+                    placeholder="Work email" />
+                </div>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <input name="org" class="rounded-xl border px-4 py-2" placeholder="Organization" />
+                  <input name="role" class="rounded-xl border px-4 py-2" placeholder="Role" />
+                </div>
+                <textarea name="message" class="rounded-xl border px-4 py-2 min-h-[120px]"
+                  placeholder="What problems are you trying to solve?"></textarea>
+                <div>
+                  <button type="submit"
+                    class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-2.5 bg-black text-white font-semibold">Request
+                    demo →</button>
+                  <p class="text-xs text-slate-500 mt-2">By submitting, you agree to our Terms & Privacy.</p>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="h-8 w-24 bg-gray-300 rounded"></div>
+          <p class="mt-3 text-slate-700 max-w-sm">Coherent HIS is a modern, modular healthcare information system built
+            for speed, safety, and interoperability.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Product</div>
+            <a href="modules.html" class="hover:text-slate-600">Modules</a>
+            <a href="features.html" class="hover:text-slate-600">Features</a>
+            <a href="compliance.html" class="hover:text-slate-600">Compliance</a>
+          </nav>
+
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Company</div>
+            <a href="about.html" class="hover:text-slate-600">About</a>
+            <a href="contact.html" class="hover:text-slate-600">Contact</a>
+            <a href="#" class="hover:text-slate-600">Status</a>
+          </nav>
+        </div>
+
+        <div class="text-sm text-slate-600">
+          © <span id="year"></span> Coherent HIS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const canvas = document.getElementById("hero-canvas");
+    const context = canvas.getContext("2d");
+
+    const frameCount = 360;
+    const currentFrame = index => `sequence/sec-${index}.webp`;
+
+    const images = [];
+    let frame = { index: 0 };
+
+    // Preload all images
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
+      images.push(img);
+    }
+
+    images[0].onload = function () {
+      canvas.width = images[0].width;
+      canvas.height = images[0].height;
+      render();
+    };
+
+    // Draw the current frame to canvas
+    function render() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(images[frame.index], 0, 0);
+    }
+
+    // Scroll-based animation using GSAP
+    gsap.to(frame, {
+      index: frameCount - 1,
+      snap: "index",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "10000", //+=3000 adjust scroll range
+        scrub: true,
+        pin: true
+      },
+      onUpdate: render
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

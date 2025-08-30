@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coherent HIS — Features</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased text-slate-900">
+
+  <!-- header -->
+  <header class="fixed w-full z-50">
+    <div class="backdrop-blur bg-white/80 border-b border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="main.html" class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Coherent HIS" class="h-8 md:h-10 w-auto" />
+          <span class="font-semibold">Coherent HIS</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="text-sm font-medium hover:text-slate-600">About</a>
+          <a href="modules.html" class="text-sm font-medium hover:text-slate-600">Modules</a>
+          <a href="features.html" class="text-sm font-medium hover:text-slate-600">Features</a>
+          <a href="compliance.html" class="text-sm font-medium hover:text-slate-600">Compliance</a>
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold hover:bg-slate-50">Book a demo →</a>
+        </nav>
+        <button id="mobileToggle" class="md:hidden p-2 rounded-lg border">☰</button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t p-4 mobile-menu">
+        <div class="flex flex-col gap-2">
+          <a href="about.html" class="py-2">About</a>
+          <a href="modules.html" class="py-2">Modules</a>
+          <a href="features.html" class="py-2">Features</a>
+          <a href="compliance.html" class="py-2">Compliance</a>
+          <a href="contact.html" class="py-2 inline-flex items-center gap-2 rounded-full border px-4 py-2 w-max">Book a demo →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <section class="py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold mb-8">Features</h1>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <img src="images/feature-clinical-flow.jpg" alt="Clinical flow" class="w-full rounded-2xl shadow" />
+          <div>
+            <h2 class="text-2xl font-bold">Designed for clinical flow</h2>
+            <p class="mt-4 text-slate-700">From triage to discharge, our workflows reduce clicks and surface the next best action with context.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 mt-6">Talk to product →</a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <img src="images/feature-interoperability.jpg" alt="Interoperability" class="w-full rounded-2xl shadow" />
+          <div>
+            <h2 class="text-2xl font-bold">Interoperable by default</h2>
+            <p class="mt-4 text-slate-700">FHIR/HL7 interfaces, labs, and pharmacy networks so your data moves with your patients.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 mt-6">Talk to product →</a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <img src="images/feature-analytics.jpg" alt="Analytics" class="w-full rounded-2xl shadow" />
+          <div>
+            <h2 class="text-2xl font-bold">Actionable analytics</h2>
+            <p class="mt-4 text-slate-700">Real-time dashboards for throughput, claims, denials, and outcomes. Export to your BI tool in seconds.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 mt-6">Talk to product →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="border-t py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <img src="images/logo-coherenthis.svg" alt="Coherent HIS" class="h-8" />
+          <p class="mt-3 text-slate-700 max-w-sm">Coherent HIS is a modern, modular healthcare information system built for speed, safety, and interoperability.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Product</div>
+            <a href="modules.html" class="hover:text-slate-600">Modules</a>
+            <a href="features.html" class="hover:text-slate-600">Features</a>
+            <a href="compliance.html" class="hover:text-slate-600">Compliance</a>
+          </nav>
+
+          <nav class="grid gap-2 text-sm">
+            <div class="font-semibold">Company</div>
+            <a href="about.html" class="hover:text-slate-600">About</a>
+            <a href="contact.html" class="hover:text-slate-600">Contact</a>
+            <a href="#" class="hover:text-slate-600">Status</a>
+          </nav>
+        </div>
+
+        <div class="text-sm text-slate-600">
+          © <span id="year"></span> Coherent HIS. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
