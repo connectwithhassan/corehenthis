@@ -6,13 +6,13 @@
   body {
     overflow-x: hidden!important; /* Hide scrollbars */
   }
-  
+
   .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
   }
-  
+
   #hero-canvas {
     position: absolute;
     top: 0;
@@ -21,7 +21,7 @@
     height: 100%;
     object-fit: cover;
   }
-  
+
   .content {
     height: 100vh;
     background: transparent;
@@ -54,4 +54,97 @@
 ::-webkit-scrollbar-thumb {
     background-color: #00000080;
     border-radius: 4px;
+}
+
+/* Global Responsive Styles */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .content {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-center {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .about-section {
+    margin: 6rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

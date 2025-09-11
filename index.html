@@ -83,6 +83,65 @@ body, html {
   .loader-header img{
     width: 100px;
   }
+
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .loader-content {
+      height: 80vh;
+    }
+
+    .loading-area {
+      padding: 10px;
+    }
+
+    .loading-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .progress-bar {
+      height: 10px;
+    }
+
+    .loader-header {
+      padding: 10px 20px;
+    }
+
+    .loader-header img {
+      width: 80px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+    }
+
+    .progress-text {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .loader-content {
+      height: 70vh;
+    }
+
+    .loader-header img {
+      width: 60px;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+    }
+
+    .progress-text {
+      font-size: 10px;
+    }
+
+    .loading-content {
+      padding: 15px;
+    }
+  }
   </style>
 </head>
 <body>
