@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/about.css">
+    <link rel="stylesheet" href="dist/css/features.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Coherent HIS | Features</title>
+    <meta name="description"
+        content="Coherent HIS is your complete clinic management solution with EMR, EPM, and RCM in one intelligent platform." />
+
+    <!-- STYLES -->
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Orlean", sans-serif;
+            color: #222;
+            line-height: 1.6;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            font-family: "Aventa", sans-serif;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: transparent;
+            backdrop-filter: blur(8px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-center {
+            display: flex;
+            gap: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 0.5rem 2rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .navbar-center a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar-center a:hover,
+        .navbar-center .--is-active {
+            color: #ff6711;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            min-width: 200px;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #111;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(255, 113, 17, 0.1);
+            color: #ff6711;
+        }
+
+        .cta-1 {
+            background: transparent;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        /* Features Section */
+        .features-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+            max-width: 100vw;
+            max-height: 100vh;
+            padding: 4rem 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            padding: 20% 3%;
+        }
+
+        /* Left Column */
+
+
+        .features-left h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        .features-left p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #444;
+            max-width: 100%;
+            font-family: "Aventa", sans-serif;
+        }
+
+
+        /* Right Column (Animated Cards) */
+        .cards-container {
+            perspective: 1000px;
+            flex: 1;
+        }
+
+        /* The group that will be observed for the in-view animation */
+        .card-group {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            /* Adjust max-width as needed */
+            height: 350px;
+            /* Adjusted height for stacking context */
+            margin: auto;
+            transform-style: preserve-3d;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Prevents flickering during 3D transforms */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        .card h3 {
+            font-family: "Orlean", sans-serif;
+            font-weight: 500;
+        }
+
+        @media (min-width: 769px) {
+            .card:not(.card--scrolled-out):hover {
+                transform: var(--transform) translateY(-20px) scale(1.05) !important;
+                z-index: 100 !important;
+            }
+        }
+
+
+        /* --- MOBILE STYLES (Intersection Observer) --- */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+                /* Prevent horizontal body scroll */
+                overflow-y: auto;
+            }
+
+            .cards-container {
+                perspective: none;
+                /* Disable perspective on mobile */
+            }
+
+            .card-group {
+                display: flex;
+                /* Make cards horizontal */
+                flex-direction: row;
+                position: static;
+                width: 100%;
+                max-width: none;
+                height: auto;
+                transform-style: flat;
+                overflow-x: scroll;
+                /* Enable horizontal scrolling */
+                overflow-y: hidden;
+                padding: 1rem 0;
+                /* Add padding for spacing */
+                scroll-snap-type: x mandatory;
+                /* Snap to cards */
+            }
+
+            .card {
+                position: static;
+                /* Remove absolute positioning */
+                width: 85vw;
+                /* Make cards take up 85% of the viewport width */
+                height: auto;
+                flex-shrink: 0;
+                /* Prevent cards from shrinking */
+                margin: 0 0.5rem;
+                /* Add spacing between cards */
+                scroll-snap-align: center;
+                /* Snap cards to the center */
+                transition: none;
+                /* Remove transitions that conflict with native scrolling */
+            }
+
+
+
+            .card:first-child {
+                margin-left: 1.5rem;
+            }
+
+            .card:last-child {
+                margin-right: 1.5rem;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: black;
+            color: #fff;
+            padding: 60px 20px 30px;
+            font-family: "Arial", sans-serif;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 4%;
+            margin-right: 4%;
+            flex-wrap: nowrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-heading {
+            font-family: "Orlean", sans-serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            max-width: 80%;
+        }
+
+        .footer-heading span {
+            color: #888;
+        }
+
+        .footer-email {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-family: "Aventa", sans-serif;
+            margin-top: 8%;
+        }
+
+        .footer-email a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-family: "Aventa", sans-serif;
+        }
+
+        .footer-right a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+
+        .footer-right a:hover {
+            color: #ea4723;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 14px;
+            color: #b8b5b5;
+        }
+
+        .footer-bottom .highlight,
+        .footer-bottom .dev {
+            color: #ea4723;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .features-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20% 0;
+            }
+
+            .features-right {
+                flex: unset;
+                width: 100%;
+            }
+
+            .features-right {
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .navbar-center {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-right {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .footer-heading {
+                font-size: 28px;
+            }
+
+            .footer-email {
+                font-size: 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" aria-label="Return to Homepage">
+                <img src="assets/images/0cd8a88f11716bf084e45604d98ebe66caa495b7.webp" alt="Coherent HIS Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="about.html">About</a>
+            <a href="features.html">Features</a>
+            </a>
+            <div class="dropdown">
+                <a class="--is-active">Offerings</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Practice management.html">Practice Management</a></li>
+                    <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
+                    <li><a href="AI-powered Eligibilty Verification.html" class="--is-active">AI-Powered Eligibility
+                            verification</a></li>
+                    <li><a href="Revenune-Cycle-management.html">Revenue Cycle Management</a></li>
+                    <li><a href="Nabidh-Compilance.html">Nabidh Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+
+       <div class="navbar-right">
+            <a href="#contactform" aria-label="Let's talk button" class="cta-1 btn-animate-chars flex space-x-2">
+                <div class="btn-animate-chars__bg"></div>
+                <span style="color: #000; font-size: 1.2rem" data-button-animate-chars=""
+                    class="btn-animate-chars__text" translate="no">Book a demo </span>
+
+                <span class="cta-1__arrow-wrapper mt-2">
+                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.46054 0.646175L4.46053 2.42847L9.06702 2.42847L0.152926 10.1178L1.30269 11.4507L10.2168 3.76136L10.2168 8.55799L12.1526 8.55799L12.1526 0.646163L4.46054 0.646175Z"
+                            fill="#FF6711" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="practice management bg-black">
+        <div style=""
+            class="bg-opacity-25 features-section max-w-full max-h-[30vh] bg-cover bg-center bg-[url('assets/images/ai-banner.webp')]">
+            <div style="line-height: 1.1; max-width: 100%;" class="content text-white mt-60">
+                <h1 style="font-family: 'Orlean', Sans-serif" class="text-6xl">AI-Powered Eligibility Verification</h1>
+                <br>
+                <p style="max-width: 100%; font-family:'Aventa', Sans-serif; font-size: 1.5rem">Boost your revenue cycle
+                    with Coherent’s eligibility verification automation, minimizing claim rejections and ensuring timely
+                    payments.
+
+                </p>
+            </div>
+    </section>
+
+    <section class="KeyFeatures"
+        style="position: relative; padding: 4rem 4rem; max-width: 1500px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);">
+        <div class="features-left" style="line-height: 1.1; max-width: 100%;">
+            <center>
+                <h1 style="font-family: 'Orlean', Sans-serif; font-size: 3rem; font-weight: 500; margin-bottom: 1rem;">
+                    Key
+                    Features</h1>
+            </center>
+            <br>
+            <img src="assets/images/1-2.jpg" alt="Centralized Practice Operations"
+                style="width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+            <br>
+            <p style="font-family: 'Aventa', Sans-serif; font-size: 1.2rem; color: #222;">
+            <h1>AI-Powered Eligibility Verification</h1>
+            <p style="font-size: 1.5rem; line-height: 1.5;">Coherent’s eligibility verification automation module is a
+                game-changer for hospitals and medical centers, offering a streamlined and efficient solution to the
+                complex process of insurance eligibility verification. By harnessing the power of artificial
+                intelligence, Coherent eliminates manual efforts, reduces claim rejections, and ensures timely payments,
+                ultimately boosting your revenue cycle. Experience a seamless and accurate eligibility verification
+                process that enhances operational efficiency, maximizes revenue, and improves overall financial
+                performance.
+            </p>
+            </p>
+
+            <br>
+            <br>
+
+            <img src="assets/images/2-2.jpg" alt="Centralized Practice Operations"
+                style="width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+            <br>
+            <p style="font-family: 'Aventa', Sans-serif; font-size: 1.2rem; color: #222;">
+            <h1>Streamlined Verification Process:</h1>
+            <p style="font-size: 1.5rem; line-height: 1.5;">With Coherent’s eligibility verification automation, the
+                days of sifting through stacks of paperwork and making endless phone calls are long gone. Our advanced
+                AI algorithms processes insurance card information by using sophisticated image processing techniques,
+                swiftly process patient information, seamlessly interfacing with insurance providers’ systems to
+                retrieve up-to-date eligibility details. Fully automated workflow leverages Robotic Process Automation
+                (RPA) for requests and response and then designated queues for approved and denied cases. This
+                automation eliminates errors, reduces administrative burden, and frees up valuable staff time to focus
+                on patient care.
+            </p>
+            </p>
+
+            <br>
+            <br>
+
+            <img src="assets/images/3-2.jpg" alt="Centralized Practice Operations"
+                style="width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+            <br>
+            <p style="font-family: 'Aventa', Sans-serif; font-size: 1.2rem; color: #222;">
+            <h1>Minimized Claim Rejections:</h1>
+            <p style="font-size: 1.5rem; line-height: 1.5;">Claim rejections can be a major drain on resources and
+                revenue. Coherent’s eligibility verification automation significantly reduces the risk of claim
+                rejections by accurately verifying insurance coverage and ensuring that procedures and services are
+                eligible for reimbursement. By catching potential issues upfront, such as expired coverage or incomplete
+                information, Coherent empowers your practice to submit clean claims, reducing the need for
+                time-consuming and costly rework.
+
+
+            </p>
+            </p>
+
+            <br>
+            <br>
+
+            <br>
+            <br>
+
+            <img src="assets/images/4-2.jpg" alt="Centralized Practice Operations"
+                style="width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+            <br>
+            <p style="font-family: 'Aventa', Sans-serif; font-size: 1.2rem; color: #222;">
+            <h1>Timely Payments:</h1>
+            <p style="font-size: 1.5rem; line-height: 1.5;">Cash flow is vital to the success of any healthcare
+                practice. Coherent’s eligibility verification automation expedites the payment process by ensuring that
+                claims are submitted with accurate and verified eligibility information. By reducing claim denials and
+                rejections, Coherent helps you secure timely payments, improving your practice’s financial stability and
+                allowing you to reinvest resources in delivering exceptional patient care.
+            </p>
+            </p>
+
+            <br>
+            <br>
+
+            <br>
+            <br>
+
+            <img src="assets/images/5-1.jpg" alt="Centralized Practice Operations"
+                style="width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+            <br>
+            <p style="font-family: 'Aventa', Sans-serif; font-size: 1.2rem; color: #222;">
+            <h1>Seamless Integration and User-Friendly Interface:</h1>
+            <p style="font-size: 1.5rem; line-height: 1.5;">Coherent’s eligibility verification automation module
+                seamlessly integrates with DHA, DOH and In-Health eligibility systems, ensuring a smooth transition and
+                minimal disruption to your workflow. The user-friendly interface offers intuitive navigation, making it
+                easy for your staff to access and utilize the module effectively. Coherent’s customer support team is
+                also readily available to provide assistance and address any questions or concerns, ensuring a seamless
+                implementation and ongoing support experience.
+            </p>
+            <br>    
+            <p style="font-size: 1.5rem; line-height: 1.5;">
+                Take the next step towards optimizing your revenue cycle by harnessing the power of eligibility
+                verification automation module. Experience reduced claim rejections, improved cash flows, and increased
+                operational efficiency, allowing your practice to focus on what truly matters – delivering exceptional
+                patient care.
+            </p>
+
+
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: black;">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-heading">
+                    Have a healthcare <br />
+                    challenge <span>you’d like to solve?</span>
+                </h2>
+                <div class="footer-email">
+                    <a href="mailto:info@coherenthis.com">info@coherenthis.com</a>
+                </div>
+            </div>
+
+            <nav class="footer-right">
+        <a href="about.html">About Us</a>
+        <a href="features.html">Features</a>
+        <a href="#">News</a>
+        <a href="#">Clients</a>
+        <a href="home.html#contact">Contact</a>
+      </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025. All rights reserved. Product of <span class="highlight">Teknoloje Solutions LLC</span></p>
+            <p>Developed By <span class="dev">Techmire Solutions</span></p>
+        </div>
+    </footer>
+
+    <!-- ✅ Animation Script -->
+    <!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cardGroup = document.querySelector('.card-group');
+      const cards = Array.from(cardGroup.querySelectorAll('.card'));
+
+      const setupScrollInteraction = () => {
+        let currentIndex = 0;
+        let isAnimating = false;
+        const cardMoveDistance = -150; 
+
+        const updateCards = () => {
+          cards.forEach((card, index) => {
+            const offset = index - currentIndex;
+
+            let transform = '';
+            let opacity = '1';
+
+            if (offset < 0) {
+              card.classList.add('card--scrolled-out');
+              transform = `translateY(${cardMoveDistance}%) rotate(15deg)`;
+              opacity = '0';
+            }
+            else {
+              card.classList.remove('card--scrolled-out');
+              const scale = 1 - (offset * 0.05);
+              const translateY = offset * 15;
+              const translateZ = offset * -50;
+              transform = `translateY(${translateY}px) translateZ(${translateZ}px) scale(${scale})`;
+            }
+
+            card.style.setProperty('--transform', transform);
+            card.style.transform = transform;
+            card.style.opacity = opacity;
+            card.style.zIndex = cards.length - Math.abs(offset);
+          });
+        };
+
+        cardGroup.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          if (isAnimating) return;
+
+          isAnimating = true;
+
+          const scrollDown = e.deltaY > 0;
+
+          if (scrollDown) {
+            if (currentIndex < cards.length - 1) {
+              currentIndex++;
+            }
+          } else {
+            if (currentIndex > 0) {
+              currentIndex--;
+            }
+          }
+
+          updateCards();
+
+          setTimeout(() => {
+            isAnimating = false;
+          }, 600);
+        });
+
+        updateCards();
+      };
+
+      const mediaQuery = window.matchMedia('(min-width: 769px)');
+
+      if (mediaQuery.matches) {
+        setupScrollInteraction();
+      }
+    });
+  </script> -->
+
+
+
+</body>
+
+</html>

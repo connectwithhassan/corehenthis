@@ -648,6 +648,14 @@
     .footer-bottom .dev {
         color: #ea4723;
     }
+
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+            border-bottom: 1px solid #9ca3af;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #f97316; /* Orange border on focus */
+        }
 </style>
 
 <body>
@@ -665,7 +673,7 @@
             <a href="features.html">Features</a>
             </a>
             <div class="dropdown">
-                <a>Offerings</a>
+                <a>Offerings <span class="text-md">▾</span></a>
                 <ul class="dropdown-menu">
                     <li><a href="Practice management.html">Practice Management</a></li>
                     <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
@@ -678,12 +686,12 @@
         </div>
 
         <div class="navbar-right">
-            <a href="contact.html" aria-label="Let's talk button" class="cta-1 btn-animate-chars">
+            <a href="#contactform" aria-label="Let's talk button" class="cta-1 btn-animate-chars flex space-x-2">
                 <div class="btn-animate-chars__bg"></div>
                 <span style="color: #000; font-size: 1.2rem" data-button-animate-chars=""
                     class="btn-animate-chars__text" translate="no">Book a demo </span>
 
-                <span class="cta-1__arrow-wrapper">
+                <span class="cta-1__arrow-wrapper mt-2">
                     <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M4.46054 0.646175L4.46053 2.42847L9.06702 2.42847L0.152926 10.1178L1.30269 11.4507L10.2168 3.76136L10.2168 8.55799L12.1526 8.55799L12.1526 0.646163L4.46054 0.646175Z"
@@ -787,8 +795,7 @@
 
         <div class="container mx-auto  py-8">
             <!-- Section Title -->
-            <h1 style="font-family: 'Orlean', sans-serif;"
-                class="text-4xl lg:text-5xl  text-white text-center mb-12">
+            <h1 style="font-family: 'Orlean', sans-serif;" class="text-4xl lg:text-5xl  text-white text-center mb-12">
                 Benefits
             </h1>
 
@@ -828,8 +835,100 @@
         </div>
 
     </section>
+    <section id="contactform" class=" bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen">
 
-    
+    <div class="bg-white p-8 md:p-12 lg:p-16 rounded-xl shadow-xl w-full max-w-4xl mx-auto my-12 text-center">
+        <!-- Connect with us header -->
+        <div class="flex items-center justify-center space-x-2 text-orange-500 font-semibold mb-2">
+            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+            <span>Connect with us!</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl  text-gray-800 mb-6">Turn your healthcare vision into outcomes that last.</h1>
+        <div class="border-b border-gray-300 w-24 mx-auto mb-8"></div>
+        
+        <p style="font-family: 'Orlean', sans-serif;" class="text-sm md:text-base text-gray-500 mb-2">
+            <span class="">📧 <span class="underline">info@coherenthis.com</span></span>
+        </p>
+        <h2 class="text-4xl md:text-5xl  text-gray-800 mb-10">Let's talk</h2>
+
+        <!-- Contact Form -->
+        <form style="font-family: 'Aventa', sans-serif;" class="space-y-6 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <input type="text" id="full-name" placeholder="Full Name" class="w-full bg-transparent outline-none p-2 placeholder-gray-400">
+                </div>
+                <div>
+                    <input type="text" id="company" placeholder="Company" class="w-full bg-transparent outline-none p-2 placeholder-gray-400">
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="Email" class="w-full bg-transparent outline-none p-2 placeholder-gray-400">
+                </div>
+                <div>
+                    <input type="tel" id="phone" placeholder="Phone" class="w-full bg-transparent outline-none p-2 placeholder-gray-400">
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <p class="font-semibold text-sm text-gray-600 mb-2">I'm interested On</p>
+                <!-- Checkbox options with buttons style -->
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        Patient Management
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        Electronic Medical Record
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        Pre-authorization & Eligibility Verification
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        Revenue Cycle Management
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        SAFER Compliance
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        E-Prescriptions
+                    </button>
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        OIC Meaningful Use Compliance
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <label for="more-details" class="text-sm text-gray-600">TELL US MORE ABOUT YOURSELF!</label>
+                <textarea id="more-details" rows="3" class="w-full bg-transparent outline-none p-2 mt-1"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 rounded-lg shadow-md hover:bg-gray-800 transition-colors duration-300">
+                SEND
+            </button>
+        </form>
+
+        <!-- Social Media Icons -->
+        <div class="mt-8 flex justify-center space-x-6 text-gray-500">
+            <a href="#" class="text-2xl hover:text-gray-900 transition-colors duration-200" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-gray-900 transition-colors duration-200" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-gray-900 transition-colors duration-200" aria-label="X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-gray-900 transition-colors duration-200" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-gray-900 transition-colors duration-200" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </div>
+
+    </section>
+
 
     <footer class="footer" style="background-color: black;">
         <div class="footer-container">
@@ -848,7 +947,7 @@
                 <a href="features.html">Features</a>
                 <a href="#">News</a>
                 <a href="#">Clients</a>
-                <a href="home.html#contactform">Contact</a>
+                <a href="#contactform">Contact</a>
             </nav>
         </div>
 
