@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Corherenthis</title>
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <style>
 body, html {
     margin: 0;
@@ -86,26 +87,75 @@ body, html {
 
   /* Responsive Media Queries */
   @media (max-width: 768px) {
+    #loader {
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
     .loader-content {
-      height: 80vh;
+      height: auto;
+      flex: 1;
+      justify-content: center;
     }
 
     .loading-area {
-      padding: 10px;
+      height: auto;
+      padding: 20px 0;
     }
 
     .loading-content {
       flex-direction: column;
       align-items: center;
+      gap: 15px;
+      padding: 0;
+    }
+
+    .progress-bar {
+      height: 12px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .loader-header {
+      padding: 20px 0;
+      justify-content: center;
+    }
+
+    .loader-header img {
+      width: 100px;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .progress-text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #loader {
+      padding: 10px;
+    }
+
+    .loader-content {
+      height: auto;
+    }
+
+    .loading-area {
+      padding: 10px 0;
+    }
+
+    .loading-content {
       gap: 10px;
     }
 
     .progress-bar {
       height: 10px;
-    }
-
-    .loader-header {
-      padding: 10px 20px;
+      max-width: 250px;
     }
 
     .loader-header img {
@@ -118,28 +168,6 @@ body, html {
 
     .progress-text {
       font-size: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .loader-content {
-      height: 70vh;
-    }
-
-    .loader-header img {
-      width: 60px;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-    }
-
-    .progress-text {
-      font-size: 10px;
-    }
-
-    .loading-content {
-      padding: 15px;
     }
   }
   </style>

@@ -7,6 +7,7 @@
     <title>Corherenthis </title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="dist/css/about.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
@@ -109,8 +110,36 @@
     }
 
     .dropdown-menu a:hover {
-        background-color: rgba(255, 113, 17, 0.1);
-        color: #ff6711;
+      background-color: rgba(255, 113, 17, 0.1);
+      color: #ff6711;
+    }
+
+    .navbar .dropdown-menu {
+      min-width: 280px;
+      padding: 0.5rem 0;
+    }
+
+    .navbar .dropdown-menu a {
+      padding: 0.75rem 1rem;
+    }
+
+    /* Footer dropdown specific styles */
+    .footer-dropdown .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.9);
+        min-width: 280px;
+        bottom: 100%;
+        top: auto;
+        padding: 0.5rem 0;
+    }
+
+    .footer-dropdown .dropdown-menu a {
+        color: #fff;
+        padding: 0.75rem 1rem;
+    }
+
+    .footer-dropdown .dropdown-menu a:hover {
+        background-color: rgba(255, 113, 17, 0.3);
+        color: #fff;
     }
 
     .cta-1 {
@@ -372,6 +401,31 @@
         .navbar-center {
             padding: 0.5rem;
             gap: 0.5rem;
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content button {
+            font-size: 1rem;
+            padding: 12px 20px;
         }
 
         .about-section h1 {
@@ -1228,7 +1282,7 @@
         });
     </script>
 
-    <!-- <section class="hero ">
+    <section class="hero ">
         <div class="animate-on-load"
             style=" position: relative; z-index:50; margin-top:12%; margin-left:5%; text-align: left; max-width:50%">
             <h1 class="" style="font-family: 'Orlean', sans-serif; font-weight:400; line-height:1.1; font-size:4rem">
@@ -1247,9 +1301,9 @@
                 style="font-family:'Aventa', sans-serif; width:250px; padding: 15px 3px; margin-top:20px; ">BOOK A
                 DEMO <span class="text-2xl" style="font-weight:600; color:#ff6711"> ↗</span></button>
         </div>
-        <canvas id="hero-canvas"></canvas>
+        <canvas id="hero-canvas" style=""></canvas>
         <div class="hero_effect" style=""></div>
-    </section> -->
+    </section>
 
     <section class="content">
         <h1 style="line-height: 1.1;" class="text-[2.5rem] md:text-[5.5rem] text-center max-w-[80%]">Modern
@@ -1647,9 +1701,20 @@
             <nav class="footer-right">
                 <a href="about.html">About Us</a>
                 <a href="features.html">Features</a>
+                <div class="dropdown footer-dropdown">
+                <a>Offerings <span class="text-md">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Practice management.html">Practice Management</a></li>
+                    <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
+                    <li><a href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility
+                            verification</a></li>
+                    <li><a href="Revenune-Cycle-management.html">Revenue Cycle Management</a></li>
+                    <li><a href="Nabidh-Compilance.html">Nabidh Compliance</a></li>
+                </ul>
+            </div>
                 <a href="#">News</a>
                 <a href="#">Clients</a>
-                <a href="#contactform">Contact</a>
+                <a href="home.html#contactform">Contact</a>
             </nav>
         </div>
 

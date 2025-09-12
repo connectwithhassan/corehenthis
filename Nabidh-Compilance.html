@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/about.css">
     <link rel="stylesheet" href="dist/css/features.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Coherent HIS | Features</title>
@@ -617,6 +618,25 @@
             border-bottom: none;
         }
 
+        /* Footer dropdown specific styles */
+        .footer-dropdown .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 280px;
+            bottom: 100%;
+            top: auto;
+            padding: 0.5rem 0;
+        }
+
+        .footer-dropdown .dropdown-menu a {
+            color: #fff;
+            padding: 0.75rem 1rem;
+        }
+
+        .footer-dropdown .dropdown-menu a:hover {
+            background-color: rgba(255, 113, 17, 0.3);
+            color: #fff;
+        }
+
         /* Media Queries for Responsiveness */
         @media (max-width: 900px) {
             .navbar-center, .navbar-right {
@@ -801,7 +821,7 @@
                         <div
                             class="overflow-hidden max-h-0 opacity-0 group-hover:max-h-none group-hover:opacity-100 transition-all duration-500 ease-in-out pt-0 group-hover:pt-4">
                             <ul class="list-disc list-inside text-gray-300 space-y-1"
-                                style="font-family:'Aventa', Sans-serif; font-size: 1.5rem">
+                                style="font-family:'Aventa', sans-serif; font-size: 1.5rem">
                                 <p>NABIDH compliance opens doors to a wealth of opportunities for healthcare
                                     institutions. By partnering with Coherent, you not only meet the regulatory
                                     requirements but also gain access to a vast network of healthcare stakeholders. This
@@ -825,7 +845,7 @@
                         <div
                             class="overflow-hidden max-h-0 opacity-0 group-hover:max-h-none group-hover:opacity-100 transition-all duration-500 ease-in-out pt-0 group-hover:pt-4">
                             <ul class="list-disc list-inside text-gray-300 space-y-1"
-                                style="font-family:'Aventa', Sans-serif; font-size: 1.5rem">
+                                style="font-family:'Aventa', sans-serif; font-size: 1.5rem">
                                 <p>Coherent’s NABIDH module goes beyond compliance; it empowers healthcare institutions
                                     with enhanced data-driven capabilities. With streamlined data collection,
                                     integration, and analysis, Coherent equips you with actionable insights to improve
@@ -849,7 +869,7 @@
                         <div
                             class="overflow-hidden max-h-0 opacity-0 group-hover:max-h-none group-hover:opacity-100 transition-all duration-500 ease-in-out pt-0 group-hover:pt-4">
                             <ul class="list-disc list-inside text-gray-300 space-y-1"
-                                style="font-family:'Aventa', Sans-serif; font-size: 1.5rem">
+                                style="font-family:'Aventa', sans-serif; font-size: 1.5rem">
                                 <p>Coherent’s NABIDH compliance module seamlessly integrates with your existing systems,
                                     ensuring a smooth and efficient workflow. The user-friendly interface and intuitive
                                     navigation make it easy for your staff to navigate and utilize the module
@@ -895,12 +915,22 @@
             </div>
 
             <nav class="footer-right">
-        <a href="about.html">About Us</a>
-        <a href="features.html">Features</a>
-        <a href="#">News</a>
-        <a href="#">Clients</a>
-        <a href="home.html#contact">Contact</a>
-      </nav>
+                <a href="about.html">About Us</a>
+                <a href="features.html">Features</a>
+                <div class="dropdown footer-dropdown">
+                    <a>Offerings <span class="text-md">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Practice management.html">Practice Management</a></li>
+                        <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
+                        <li><a href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility verification</a></li>
+                        <li><a href="Revenune-Cycle-management.html">Revenue Cycle Management</a></li>
+                        <li><a href="Nabidh-Compilance.html">Nabidh Compliance</a></li>
+                    </ul>
+                </div>
+                <a href="#">News</a>
+                <a href="#">Clients</a>
+                <a href="home.html#contactform">Contact</a>
+            </nav>
         </div>
 
         <div class="footer-bottom">
@@ -982,8 +1012,6 @@
       }
     });
   </script> -->
-
-
 
 </body>
 

@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="dist/css/about.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
   <title>Coherent HIS | About Us</title>
   <meta name="description"
@@ -136,6 +137,15 @@
     .dropdown-menu a:hover {
       background-color: rgba(255, 113, 17, 0.1);
       color: #ff6711;
+    }
+
+    .navbar .dropdown-menu {
+      min-width: 280px;
+      padding: 0.5rem 0;
+    }
+
+    .navbar .dropdown-menu a {
+      padding: 0.75rem 1rem;
     }
 
     .cta-1 {
@@ -602,44 +612,43 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container" style="max-width: 95%; align-items: flex-center;">
+  <footer class="footer" style="background-color: black;">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-heading">
+                    Have a healthcare <br />
+                    challenge <span>you’d like to solve?</span>
+                </h2>
+                <div class="footer-email">
+                    <a href="mailto:info@coherenthis.com">info@coherenthis.com</a>
+                </div>
+            </div>
 
-      <!-- Left Section -->
-      <div class="footer-left">
-        <h2 class="footer-heading">
-          Have a healthcare <br />
-          challenge <span>you’d like to solve?</span>
-        </h2>
-
-        <!-- Email -->
-        <div class="footer-email">
-          <svg width="43" height="44" viewBox="0 0 43 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M40.6738 2.90426C34.7073 -3.09065 15.4974 3.91379 13.3281 4.73095C7.3689 6.97904 0.22047 10.4272 0.00574225 14.1062C-0.23835 19.1722 7.34504 24.2456 14.0585 26.2243C14.3815 26.3196 14.7302 26.2243 14.9688 25.9861L27.0303 13.945C27.7479 13.2286 28.9078 13.2286 29.6254 13.945C30.343 14.6614 30.343 15.8193 29.6254 16.5357L17.5327 28.608C17.2941 28.8462 17.1987 29.1943 17.2923 29.5168C19.3001 36.3984 24.5361 43.5 29.3868 43.5C29.4253 43.5 29.4657 43.5 29.5043 43.5C33.3969 43.1922 37.062 34.7971 38.8991 29.8227C39.6956 27.6754 46.4751 8.70129 40.6738 2.90426Z"
-              fill="#FCFCFD" />
-          </svg>
-          <a href="mailto:info@coherenthis.com">info@coherenthis.com</a>
+            <nav class="footer-right">
+                <a href="about.html">About Us</a>
+                <a href="features.html">Features</a>
+                <div class="dropdown footer-dropdown">
+                <a>Offerings <span class="text-md">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Practice management.html">Practice Management</a></li>
+                    <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
+                    <li><a href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility
+                            verification</a></li>
+                    <li><a href="Revenune-Cycle-management.html">Revenue Cycle Management</a></li>
+                    <li><a href="Nabidh-Compilance.html">Nabidh Compliance</a></li>
+                </ul>
+            </div>
+                <a href="#">News</a>
+                <a href="#">Clients</a>
+                <a href="home.html#contactform">Contact</a>
+            </nav>
         </div>
-      </div>
 
-      <!-- ✅ Right Section (Navbar links) -->
-      <nav class="footer-right" style="margin-top: 14%;">
-        <a href="#">About Us</a>
-        <a href="#">Features</a>
-        <a href="#">News</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-
-    <!-- ✅ Bottom Section -->
-    <div class="footer-bottom"
-      style="padding-left: 5%; padding-right: 5%; font-family: 'Aventa', sans-serif; font-size:1.2rem">
-      <p>2025. All rights reserved. Product of <span class="highlight">Teknoloje Solutions LLC</span></p>
-      <p>Developed By <span class="dev">Techmire Solutions</span></p>
-    </div>
-  </footer>
+        <div class="footer-bottom">
+            <p>2025. All rights reserved. Product of <span class="highlight">Teknoloje Solutions LLC</span></p>
+            <p>Developed By <span class="dev">Techmire Solutions</span></p>
+        </div>
+    </footer>
 
   <style>
     .footer {
@@ -712,6 +721,25 @@
 
     .footer-right a:hover {
       color: #ea4723;
+    }
+
+    /* Footer dropdown specific styles */
+    .footer-dropdown .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.9);
+      min-width: 280px;
+      bottom: 100%;
+      top: auto;
+      padding: 0.5rem 0;
+    }
+
+    .footer-dropdown .dropdown-menu a {
+      color: #fff;
+      padding: 0.75rem 1rem;
+    }
+
+    .footer-dropdown .dropdown-menu a:hover {
+      background-color: rgba(255, 113, 17, 0.3);
+      color: #fff;
     }
 
     /* ✅ Bottom Section */

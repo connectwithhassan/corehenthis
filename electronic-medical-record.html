@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/about.css">
     <link rel="stylesheet" href="dist/css/features.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Coherent HIS | Features</title>
@@ -135,6 +136,15 @@
         .dropdown-menu a:hover {
             background-color: rgba(255, 113, 17, 0.1);
             color: #ff6711;
+        }
+
+        .navbar .dropdown-menu {
+            min-width: 280px;
+            padding: 0.5rem 0;
+        }
+
+        .navbar .dropdown-menu a {
+            padding: 0.75rem 1rem;
         }
 
         .cta-1 {
@@ -1069,7 +1079,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: black;">
+     <footer class="footer" style="background-color: black;">
         <div class="footer-container">
             <div class="footer-left">
                 <h2 class="footer-heading">
@@ -1084,9 +1094,20 @@
             <nav class="footer-right">
                 <a href="about.html">About Us</a>
                 <a href="features.html">Features</a>
+                <div class="dropdown footer-dropdown">
+                <a>Offerings <span class="text-md">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Practice management.html">Practice Management</a></li>
+                    <li><a href="electronic-medical-record.html">Electronic Medical Record</a></li>
+                    <li><a href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility
+                            verification</a></li>
+                    <li><a href="Revenune-Cycle-management.html">Revenue Cycle Management</a></li>
+                    <li><a href="Nabidh-Compilance.html">Nabidh Compliance</a></li>
+                </ul>
+            </div>
                 <a href="#">News</a>
                 <a href="#">Clients</a>
-                <a href="home.html#contact">Contact</a>
+                <a href="home.html#contactform">Contact</a>
             </nav>
         </div>
 
