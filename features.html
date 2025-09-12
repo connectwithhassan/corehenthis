@@ -826,15 +826,24 @@
             border-bottom: none;
         }
 
-        /* Media Queries for Responsiveness */
-        @media (max-width: 900px) {
-            .navbar-center, .navbar-right {
-                display: none;
-            }
-            .navbar-right__menu-button__wrapper {
-                display: flex;
-            }
-        }
+       /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .card-group {
+        width: 90%;
+        height: 350px;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .card {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        z-index: 1 !important;
+        margin-bottom: 2rem;
+        height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -1141,16 +1150,15 @@
     </footer>
 
   <!-- ✅ Animation Script -->
-  <script>
+ <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cardGroup = document.querySelector('.card-group');
       const cards = Array.from(cardGroup.querySelectorAll('.card'));
 
       // Function for the desktop mouse scroll animation
       const setupScrollInteraction = () => {
-        let currentIndex = 0;
+        let currentIndex = cards.length - 1; // Change: Start with the last card
         let isAnimating = false;
-        const cardMoveDistance = -150; // How far up the card moves when scrolled out
 
         const updateCards = () => {
           cards.forEach((card, index) => {
@@ -1159,14 +1167,13 @@
             let transform = '';
             let opacity = '1';
 
-            // Cards that have been scrolled past
+            // Cards that have been scrolled past will now move up and out of view.
             if (offset < 0) {
-              // Add a class to identify them
               card.classList.add('card--scrolled-out');
-              transform = `translateY(${cardMoveDistance}%) rotate(15deg)`;
+              transform = `translateY(-150%) rotate(15deg)`;
               opacity = '0';
             }
-            // The current active card and the ones behind it
+            // The current active card and the ones behind it will be stacked and scaled.
             else {
               card.classList.remove('card--scrolled-out');
               const scale = 1 - (offset * 0.05);
@@ -1192,13 +1199,16 @@
 
           const scrollDown = e.deltaY > 0;
 
+          // The logic is properly reversed now based on your request.
+          // Scroll down will now make cards go down and out of view.
           if (scrollDown) {
-            if (currentIndex < cards.length - 1) {
-              currentIndex++;
-            }
-          } else {
             if (currentIndex > 0) {
               currentIndex--;
+            }
+          } else {
+            // Scroll up will show the next card, making it come from the top
+            if (currentIndex < cards.length - 1) {
+              currentIndex++;
             }
           }
 
@@ -1214,17 +1224,86 @@
         updateCards();
       };
 
+      // Function for the mobile touch animation
+      const setupTouchInteraction = () => {
+        let currentIndex = cards.length - 1;
+        let isAnimating = false;
+        let touchStartY = 0;
+
+        const updateCards = () => {
+          cards.forEach((card, index) => {
+            const offset = index - currentIndex;
+            let transform = '';
+            let opacity = '1';
+
+            if (offset < 0) {
+              card.classList.add('card--scrolled-out');
+              transform = `translateY(-150%) rotate(15deg)`;
+              opacity = '0';
+            } else {
+              card.classList.remove('card--scrolled-out');
+              const scale = 1 - (offset * 0.05);
+              const translateY = offset * 15;
+              const translateZ = offset * -50;
+              transform = `translateY(${translateY}px) translateZ(${translateZ}px) scale(${scale})`;
+            }
+
+            card.style.setProperty('--transform', transform);
+            card.style.transform = transform;
+            card.style.opacity = opacity;
+            card.style.zIndex = cards.length - Math.abs(offset);
+          });
+        };
+
+        cardGroup.addEventListener('touchstart', (e) => {
+          touchStartY = e.touches[0].clientY;
+        });
+
+        cardGroup.addEventListener('touchend', (e) => {
+          if (isAnimating) return;
+
+          isAnimating = true;
+
+          const touchEndY = e.changedTouches[0].clientY;
+          const touchDistance = touchStartY - touchEndY;
+          const swipeThreshold = 50; // Adjust as needed
+
+          // Now we check for swipe direction to match the wheel logic
+          if (touchDistance > swipeThreshold) { // Swiped up
+            // This now hides the card, matching scroll down on desktop
+            if (currentIndex > 0) {
+              currentIndex--;
+            }
+          } else if (touchDistance < -swipeThreshold) { // Swiped down
+            // This now shows the next card, matching scroll up on desktop
+            if (currentIndex < cards.length - 1) {
+              currentIndex++;
+            }
+          }
+          
+          updateCards();
+
+          setTimeout(() => {
+            isAnimating = false;
+          }, 600);
+        });
+
+        updateCards();
+      };
+
+
       // Check screen size and apply the appropriate animation logic
-      const mediaQuery = window.matchMedia('(min-width: 769px)');
+      const mediaQuery = window.matchMedia('(min-width: 450px)'); // Changed min-width to 450px
 
       if (mediaQuery.matches) {
         // On desktop, use the scroll interaction
         setupScrollInteraction();
+      } else {
+        // On mobile, use the touch interaction
+        setupTouchInteraction();
       }
     });
   </script>
-
-
 
 </body>
 
