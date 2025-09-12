@@ -49,6 +49,23 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                gap: 2rem !important;
+            }
+            .navbar-center {
+                flex-direction: row !important;
+                justify-content: center !important;
+                gap: 2rem !important;
+                background-color: transparent !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                flex: 1 !important;
+            }
+        }
 
         .navbar img {
             height: 40px;
@@ -360,6 +377,59 @@
             .features-right {
                 margin-top: 2rem;
             }
+
+            /* Banner adjustments */
+            .practice.management .content h1 {
+                font-size: 3rem !important;
+            }
+
+            .practice.management .content p {
+                font-size: 1.2rem !important;
+            }
+
+            /* Feature cards adjustments */
+            .feature-card h3 {
+                font-size: 3rem !important;
+            }
+
+            .feature-card ul {
+                font-size: 1.2rem !important;
+            }
+
+            /* Full-width sections adjustments */
+            .practice.management .w-\[65\%\] h1,
+            .practice.management .w-\[80\%\] h1 {
+                font-size: 4rem !important;
+            }
+
+            .practice.management .w-\[65\%\] p,
+            .practice.management .w-\[80\%\] p {
+                font-size: 1.5rem !important;
+                width: 90% !important;
+            }
+
+            /* KeyFeatures adjustments */
+            .KeyFeatures h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .KeyFeatures p {
+                font-size: 1.5rem !important;
+                width: 80% !important;
+            }
+
+            .KeyFeatures img {
+                width: 80% !important;
+            }
+
+            /* Registration scheduling adjustments */
+            .registration-scheduling h2 {
+                font-size: 2.5rem !important;
+            }
+
+            .registration-scheduling ul {
+                font-size: 1rem !important;
+            }
         }
 
         @media (max-width: 768px) {
@@ -371,6 +441,83 @@
             .navbar-center {
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            .practice.management {
+                padding: 2rem 1rem;
+            }
+
+            .practice.management .content {
+                margin-top: 2rem;
+            }
+
+            .practice.management .content h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .practice.management .content p {
+                font-size: 1rem !important;
+            }
+
+            .py-16.md\:py-24 {
+                padding: 2rem 1rem !important;
+            }
+
+            .feature-card {
+                padding: 1rem !important;
+            }
+
+            .feature-card h3 {
+                font-size: 2rem !important;
+            }
+
+            .feature-card ul {
+                font-size: 1rem !important;
+            }
+
+            .practice.management .w-\[65\%\],
+            .practice.management .w-\[80\%\] {
+                width: 95% !important;
+            }
+
+            .practice.management .w-\[65\%\] h1,
+            .practice.management .w-\[80\%\] h1 {
+                font-size: 3rem !important;
+            }
+
+            .practice.management .w-\[65\%\] p,
+            .practice.management .w-\[80\%\] p {
+                font-size: 1.2rem !important;
+                width: 100% !important;
+            }
+
+            .KeyFeatures {
+                padding: 2rem 1rem !important;
+            }
+
+            .KeyFeatures h1 {
+                font-size: 2rem !important;
+            }
+
+            .KeyFeatures p {
+                font-size: 1.2rem !important;
+                width: 100% !important;
+            }
+
+            .KeyFeatures img {
+                width: 100% !important;
+            }
+
+            .registration-scheduling {
+                padding: 2rem 1rem !important;
+            }
+
+            .registration-scheduling h2 {
+                font-size: 2rem !important;
+            }
+
+            .registration-scheduling ul {
+                font-size: 0.9rem !important;
             }
 
             .footer-container {
@@ -396,6 +543,154 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+
+            .navbar-center {
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+
+            .practice.management .content h1 {
+                font-size: 2rem !important;
+            }
+
+            .practice.management .content p {
+                font-size: 0.9rem !important;
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem !important;
+            }
+
+            .feature-card ul {
+                font-size: 0.9rem !important;
+            }
+
+            .practice.management .w-\[65\%\] h1,
+            .practice.management .w-\[80\%\] h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .practice.management .w-\[65\%\] p,
+            .practice.management .w-\[80\%\] p {
+                font-size: 1rem !important;
+            }
+
+            .KeyFeatures h1 {
+                font-size: 1.5rem !important;
+            }
+
+            .KeyFeatures p {
+                font-size: 1rem !important;
+            }
+
+            .registration-scheduling h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .registration-scheduling ul {
+                font-size: 0.8rem !important;
+            }
+
+            .footer-heading {
+                font-size: 1.5rem !important;
+            }
+
+            .footer-email {
+                font-size: 0.9rem !important;
+            }
+
+            .footer-right a {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Hamburger Menu Button */
+        .navbar-right__menu-button__wrapper {
+            display: none; /* Hide on desktop */
+            flex-direction: column;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .navbar__menu-bar {
+            width: 100%;
+            height: 2px;
+            background: #333;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            position: absolute;
+        }
+        .navbar__menu-bar.--is-top { top: 0.5rem; }
+        .navbar__menu-bar.--is-middle { top: 50%; transform: translateY(-50%); }
+        .navbar__menu-bar.--is-bottom { bottom: 0.5rem; }
+
+        .navbar__menu-bar.active.--is-top {
+            transform: rotate(45deg);
+            top: 50%;
+            transform-origin: center;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        .navbar__menu-bar.active.--is-middle { opacity: 0; }
+        .navbar__menu-bar.active.--is-bottom {
+            transform: rotate(-45deg);
+            bottom: 50%;
+            transform-origin: center;
+            transform: translateY(50%) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: white;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 5rem;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 900px) {
+            .navbar-center, .navbar-right {
+                display: none;
+            }
+            .navbar-right__menu-button__wrapper {
+                display: flex;
             }
         }
     </style>
@@ -440,7 +735,51 @@
                     </svg>
                 </span>
             </a>
+            <div class="navbar-right__divider"></div>
         </div>
+        <!-- Hamburger icon moved here to fix the issue -->
+        <div class="navbar-right__menu-button__wrapper" data-menu-toggle>
+            <span class="navbar__menu-bar --is-top"></span>
+            <span class="navbar__menu-bar --is-middle"></span>
+            <span class="navbar__menu-bar --is-bottom"></span>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="#">Offerings</a>
+        <a class="mobile-sub-link" href="Practice management.html">Practice Management</a>
+        <a class="mobile-sub-link" href="electronic-medical-record.html">Electronic Medical Record</a>
+        <a class="mobile-sub-link" href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility
+            verification</a>
+        <a class="mobile-sub-link" href="Revenune-Cycle-management.html">Revenue Cycle Management</a>
+        <a class="mobile-sub-link" href="Nabidh-Compilance.html">Nabidh Compliance</a>
+        <a href="home.html#contactform">Book a demo</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('[data-menu-toggle]');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navbar = document.querySelector('.navbar');
+            const menuBars = document.querySelectorAll('.navbar__menu-bar');
+
+            // Toggle mobile menu on click
+            menuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+                menuBars.forEach(bar => bar.classList.toggle('active'));
+            });
+
+            // Add 'scrolled' class to navbar on scroll
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
     </nav>
 
     <section class="practice management bg-black">
@@ -590,7 +929,7 @@
         </div>
     </section>
 
-    <section class="KeyFeatures " 
+    <section class="KeyFeatures "
         style="position: relative; padding: 4rem 4rem; max-width: 1500px;  margin: 0 auto; background: black; border-radius: 16px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);">
         <div class="features-left rounded-none"
             style="line-height: 1.1; max-width: 100%; color:#fff; font-family:'Orlean', Sans-serif">
@@ -700,23 +1039,34 @@
 
     </section>
 
-    
-  <section class="registration-scheduling" style="background-color: black; color: white; padding: 3rem 4rem; width: 100%; margin: 0 auto;">
-    <h2 style="font-family: 'Orlean', sans-serif; font-size: 3rem; font-weight: 400; margin-bottom: 1rem;">Interoperability and Data Sharing:</h2>
-    <ul style="font-family: 'Aventa', sans-serif; font-size: 1.2rem; line-height: 1.6; list-style-type: disc; padding-left: 1.5rem;">
-      <li>Interoperability with other healthcare systems for seamless data exchange</li>
-      <li>Integration with national health information exchange networks for secure data sharing</li>
-      <li>Ability to send and receive electronic referrals, consults, and orders</li>
-      <li>UAE based integration with Malaffi, NABIDH and Riayati platforms through HL7 standard</li>
-    </ul>
-    <h2 style="font-family: 'Orlean', sans-serif; font-size: 3rem; font-weight: 400; margin: 2rem 0 1rem;">Benefits:</h2>
-    <ul style="font-family: 'Aventa', sans-serif; font-size: 1.2rem; line-height: 1.6; list-style-type: disc; padding-left: 1.5rem;">
-      <li>Improved patient care: With comprehensive patient records and clinical decision support tools, Coherent HIS’s EMR module helps you make informed decisions about patient care.</li>
-      <li>Increased efficiency: Streamlined charting and documentation processes, customizable templates, and voice recognition and dictation options help you complete documentation more quickly and efficiently.</li>
-      <li>Seamless data exchange: Interoperability with other healthcare systems and medical devices, as well as integration with health information exchange networks, enables seamless data exchange and communication.</li>
-      <li>Flexibility: Coherent HIS’s EMR module can be customized to meet the needs of different specialties and patient populations.</li>
-    </ul>
-  </section>
+
+    <section class="registration-scheduling"
+        style="background-color: black; color: white; padding: 3rem 4rem; width: 100%; margin: 0 auto;">
+        <h2 style="font-family: 'Orlean', sans-serif; font-size: 3rem; font-weight: 400; margin-bottom: 1rem;">
+            Interoperability and Data Sharing:</h2>
+        <ul
+            style="font-family: 'Aventa', sans-serif; font-size: 1.2rem; line-height: 1.6; list-style-type: disc; padding-left: 1.5rem;">
+            <li>Interoperability with other healthcare systems for seamless data exchange</li>
+            <li>Integration with national health information exchange networks for secure data sharing</li>
+            <li>Ability to send and receive electronic referrals, consults, and orders</li>
+            <li>UAE based integration with Malaffi, NABIDH and Riayati platforms through HL7 standard</li>
+        </ul>
+        <h2 style="font-family: 'Orlean', sans-serif; font-size: 3rem; font-weight: 400; margin: 2rem 0 1rem;">Benefits:
+        </h2>
+        <ul
+            style="font-family: 'Aventa', sans-serif; font-size: 1.2rem; line-height: 1.6; list-style-type: disc; padding-left: 1.5rem;">
+            <li>Improved patient care: With comprehensive patient records and clinical decision support tools, Coherent
+                HIS’s EMR module helps you make informed decisions about patient care.</li>
+            <li>Increased efficiency: Streamlined charting and documentation processes, customizable templates, and
+                voice recognition and dictation options help you complete documentation more quickly and efficiently.
+            </li>
+            <li>Seamless data exchange: Interoperability with other healthcare systems and medical devices, as well as
+                integration with health information exchange networks, enables seamless data exchange and communication.
+            </li>
+            <li>Flexibility: Coherent HIS’s EMR module can be customized to meet the needs of different specialties and
+                patient populations.</li>
+        </ul>
+    </section>
 
     <!-- Footer -->
     <footer class="footer" style="background-color: black;">
@@ -732,12 +1082,12 @@
             </div>
 
             <nav class="footer-right">
-        <a href="about.html">About Us</a>
-        <a href="features.html">Features</a>
-        <a href="#">News</a>
-        <a href="#">Clients</a>
-        <a href="home.html#contact">Contact</a>
-      </nav>
+                <a href="about.html">About Us</a>
+                <a href="features.html">Features</a>
+                <a href="#">News</a>
+                <a href="#">Clients</a>
+                <a href="home.html#contact">Contact</a>
+            </nav>
         </div>
 
         <div class="footer-bottom">
