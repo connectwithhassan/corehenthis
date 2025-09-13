@@ -1157,7 +1157,7 @@
           setTimeout(() => {
             isAnimating = false;
           }, 600); // Should match the transition duration
-        });
+        }, { passive: false });
 
         // Set initial state
         updateCards();
@@ -1196,7 +1196,11 @@
 
         cardGroup.addEventListener('touchstart', (e) => {
           touchStartY = e.touches[0].clientY;
-        });
+        }, { passive: false });
+
+        cardGroup.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+        }, { passive: false });
 
         cardGroup.addEventListener('touchend', (e) => {
           if (isAnimating) return;
@@ -1207,25 +1211,23 @@
           const touchDistance = touchStartY - touchEndY;
           const swipeThreshold = 50; // Adjust as needed
 
-          // Now we check for swipe direction to match the wheel logic
+          // Adjusted swipe logic: swipe up shows next card, swipe down hides current
           if (touchDistance > swipeThreshold) { // Swiped up
-            // This now hides the card, matching scroll down on desktop
-            if (currentIndex > 0) {
-              currentIndex--;
-            }
-          } else if (touchDistance < -swipeThreshold) { // Swiped down
-            // This now shows the next card, matching scroll up on desktop
             if (currentIndex < cards.length - 1) {
               currentIndex++;
             }
+          } else if (touchDistance < -swipeThreshold) { // Swiped down
+            if (currentIndex > 0) {
+              currentIndex--;
+            }
           }
-          
+
           updateCards();
 
           setTimeout(() => {
             isAnimating = false;
           }, 600);
-        });
+        }, { passive: false });
 
         updateCards();
       };
