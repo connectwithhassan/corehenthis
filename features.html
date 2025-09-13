@@ -246,50 +246,6 @@
         perspective: none;
         /* Disable perspective on mobile */
       }
-
-      .card-group {
-        display: flex;
-        /* Make cards horizontal */
-        flex-direction: row;
-        position: static;
-        width: 100%;
-        max-width: none;
-        height: auto;
-        transform-style: flat;
-        overflow-x: scroll;
-        /* Enable horizontal scrolling */
-        overflow-y: hidden;
-        padding: 1rem 0;
-        /* Add padding for spacing */
-        scroll-snap-type: x mandatory;
-        /* Snap to cards */
-      }
-
-      .card {
-        position: static;
-        /* Remove absolute positioning */
-        width: 85vw;
-        /* Make cards take up 85% of the viewport width */
-        height: auto;
-        flex-shrink: 0;
-        /* Prevent cards from shrinking */
-        margin: 0 0.5rem;
-        /* Add spacing between cards */
-        scroll-snap-align: center;
-        /* Snap cards to the center */
-        transition: none;
-        /* Remove transitions that conflict with native scrolling */
-      }
-
-
-
-      .card:first-child {
-        margin-left: 1.5rem;
-      }
-
-      .card:last-child {
-        margin-right: 1.5rem;
-      }
     }
 
     /* Footer */
@@ -826,24 +782,7 @@
             border-bottom: none;
         }
 
-       /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      .card-group {
-        width: 90%;
-        height: 350px;
-        flex-direction: column;
-        justify-content: flex-start;
-      }
 
-      .card {
-        position: relative;
-        transform: none !important;
-        opacity: 1 !important;
-        z-index: 1 !important;
-        margin-bottom: 2rem;
-        height: auto;
-      }
-    }
   </style>
 </head>
 
@@ -1293,7 +1232,7 @@
 
 
       // Check screen size and apply the appropriate animation logic
-      const mediaQuery = window.matchMedia('(min-width: 450px)'); // Changed min-width to 450px
+      const mediaQuery = window.matchMedia('(min-width: 769px)');
 
       if (mediaQuery.matches) {
         // On desktop, use the scroll interaction
