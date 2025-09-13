@@ -234,7 +234,7 @@
     }
 
 
-    /* --- MOBILE STYLES (Intersection Observer) --- */
+      /* --- MOBILE STYLES (Intersection Observer) --- */
     @media (max-width: 768px) {
       body {
         overflow-x: hidden;
@@ -245,6 +245,31 @@
       .cards-container {
         perspective: none;
         /* Disable perspective on mobile */
+      }
+
+      .features-section {
+        overflow-x: hidden;
+      }
+
+      .card-group {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .card {
+        width: 80vw !important;
+        max-width: 320px;
+        height: 280px !important;
+        padding: 0.75rem !important;
+        overflow-y: auto !important;
+      }
+
+      .card h3 {
+        font-size: 1.2rem !important;
+      }
+
+      .card p {
+        font-size: 0.85rem !important;
       }
     }
 
