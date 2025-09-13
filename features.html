@@ -423,6 +423,8 @@
     /* Responsive */
     @media (max-width: 900px) {
       .features-section {
+        max-height: 100vh;
+        height:100vh;
         flex-direction: column;
         text-align: center;
         padding: 20% 0;
@@ -447,6 +449,10 @@
       .navbar-center {
         flex-wrap: wrap;
         justify-content: center;
+      }
+
+      .navbar-right__menu-button__wrapper {
+        display: flex;
       }
 
       .features-section {
@@ -709,7 +715,7 @@
             animation: fadeInSlideUp 1s ease-out forwards;
         }
       
-        /* Hamburger Menu Button */
+       /* Hamburger Menu Button */
         .navbar-right__menu-button__wrapper {
             display: none; /* Hide on desktop */
             flex-direction: column;
@@ -782,6 +788,16 @@
             border-bottom: none;
         }
 
+        /* Media Queries for Responsiveness */
+        @media (max-width: 900px) {
+            .navbar-center, .navbar-right {
+                display: none;
+            }
+            .navbar-right__menu-button__wrapper {
+                display: flex;
+            }
+        }
+
 
   </style>
 </head>
@@ -826,41 +842,40 @@
             </a>
             <div class="navbar-right__divider"></div>
         </div>
-        <!-- Hamburger icon moved here to fix the issue -->
-        <div class="navbar-right__menu-button__wrapper" data-menu-toggle>
-            <span class="navbar__menu-bar --is-top"></span>
-            <span class="navbar__menu-bar --is-middle"></span>
-            <span class="navbar__menu-bar --is-bottom"></span>
-        </div>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="about.html">About</a>
-        <a href="features.html">Features</a>
-        <a href="#">Offerings</a>
-        <a class="mobile-sub-link" href="Practice management.html">Practice Management</a>
-        <a class="mobile-sub-link" href="electronic-medical-record.html">Electronic Medical Record</a>
-        <a class="mobile-sub-link" href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility
-            verification</a>
-        <a class="mobile-sub-link" href="Revenune-Cycle-management.html">Revenue Cycle Management</a>
-        <a class="mobile-sub-link" href="Nabidh-Compilance.html">Nabidh Compliance</a>
-        <a href="home.html#contactform">Book a demo</a>
+    <!-- Hamburger icon moved here to fix the issue -->
+    <div class="navbar-right__menu-button__wrapper" data-menu-toggle>
+      <span class="navbar__menu-bar --is-top"></span>
+      <span class="navbar__menu-bar --is-middle"></span>
+      <span class="navbar__menu-bar --is-bottom"></span>
     </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="#">Offerings</a>
+    <a class="mobile-sub-link" href="Practice management.html">Practice Management</a>
+    <a class="mobile-sub-link" href="electronic-medical-record.html">Electronic Medical Record</a>
+    <a class="mobile-sub-link" href="AI-powered Eligibilty Verification.html">AI-Powered Eligibility verification</a>
+    <a class="mobile-sub-link" href="Revenune-Cycle-management.html">Revenue Cycle Management</a>
+    <a class="mobile-sub-link" href="Nabidh-Compilance.html">Nabidh Compliance</a>
+    <a href="home.html#contactform">Book a demo</a>
+  </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('[data-menu-toggle]');
             const mobileMenu = document.getElementById('mobile-menu');
             const navbar = document.querySelector('.navbar');
             const menuBars = document.querySelectorAll('.navbar__menu-bar');
 
             // Toggle mobile menu on click
-            menuToggle.addEventListener('click', function () {
+            menuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('active');
                 menuBars.forEach(bar => bar.classList.toggle('active'));
             });
 
             // Add 'scrolled' class to navbar on scroll
-            window.addEventListener('scroll', function () {
+            window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
